@@ -1,0 +1,277 @@
+body {
+    background-image: url(../img/1323984.png);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* NAV */
+
+header nav{
+    background-color: rgba(149, 170, 97, 0.97);
+}
+
+header nav.navbar a{
+    color: whitesmoke;
+}
+header nav button.navbar-toggler{/*color del menu desplegable en resoluciones menores a 990px aproximadamente*/
+    background-image: url("../img/menu.png");
+    background-repeat: no-repeat;
+    background-size:40px 40px;
+    background-position: top;
+}
+
+/* MAIN */
+
+main {
+    background-color: rgba(208, 218, 172, 0.985);
+}
+
+main div.tituloPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main div section.preguntas form h2 {
+    padding-top: 14px;
+    font-size: 25px;
+    text-align: center;
+}
+
+main section.preguntas {
+    width: 85%;
+    margin: 10px auto 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+main section form {
+    margin-bottom: 30px;
+    background-color: #dacdac;
+    border-radius: 15px;
+}
+
+main section form article.group{
+    background-color: #e4d6ae;
+    border-radius: 15px;
+    width: 85%;
+    margin: 20px auto;
+}
+
+main section form div.pregunta{
+    margin: 10px 30px;
+}
+
+main section form div.pregunta label{
+    font-weight: bold;
+    margin: 10px 30px 0;
+}
+
+main section form div.respuestas {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+}
+
+main section form div.respuestas label input {
+    margin-right: 10px;
+}
+
+main div section.preguntas form img{/*imagen de las preguntas*/
+    margin-top:10px;
+    margin-left: 33%;
+    border-radius: 30px;
+}
+
+main div section.preguntas form article.boton {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+main div section.preguntas form article.boton button{
+    border-color: #8a4900;
+    color: #8a4900;
+}
+
+main div section.preguntas form article.boton button:hover{
+    background-color: #ad7536;
+    border-color: #8a4900;
+    color:whitesmoke;
+}
+/*Imagenes*/
+main div section.preguntas form article.group div.pregunta img#oscar{
+width:150px;
+margin-left:40%;
+}
+main div section.preguntas form article.group div.pregunta img#geo{
+width:150px;
+margin-left:40%;
+}
+main div section.preguntas form article.group div.pregunta img#music{
+width:150px;
+margin-left:40%;
+}
+main div section.preguntas form article.group div.pregunta img#depo{
+width:150px;
+margin-left:40%;
+}
+main div section.preguntas form article.group div.pregunta img#hist{
+width:150px;
+margin-left:40%;
+}
+/* FOOTER */
+
+footer {
+    background-color:rgba(149, 170, 97, 0.97);
+}
+
+footer {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+footer section{
+    width: 100%;
+    margin: 20px, auto;
+    text-align: center;
+}
+
+footer section a{
+    text-decoration: none;
+    color: #FFFAF9;
+    margin: 10px;
+}
+
+footer section a:hover{
+    color: #FFFAF9;
+}
+
+footer section.redes h6{
+    color: #FFFAF9;
+    margin-bottom: 15px;
+}
+
+footer section.redes a i{
+    width: 36px;
+    height: 36px;
+    border: solid white 2px;
+    border-radius: 36px;
+    padding-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1199px){
+    main div section.preguntas form img{
+        margin-top:10px;
+        margin-left: 27%;
+        border-radius: 30px;
+    }
+    main div section.preguntas form article.group div.pregunta img#oscar{
+        margin-left:38%;
+    }
+    main div section.preguntas form article.group div.pregunta img#geo{
+        margin-left:38%;
+    }
+    main div section.preguntas form article.group div.pregunta img#music{
+        margin-left:38%;
+    }
+    main div section.preguntas form article.group div.pregunta img#depo{
+        margin-left:38%;
+        }
+    main div section.preguntas form article.group div.pregunta img#hist{
+        margin-left:38%;
+    }
+}
+@media (max-width: 991px){
+    main div section.preguntas form img{
+        margin-top:10px;
+        margin-left: 18%;
+        border-radius: 30px;
+    }
+    main div section.preguntas form article.group div.pregunta img#oscar{
+        margin-left:33%;
+    }
+    main div section.preguntas form article.group div.pregunta img#geo{
+        margin-left:33%;
+    }
+    main div section.preguntas form article.group div.pregunta img#music{
+        margin-left:33%;
+    }
+    main div section.preguntas form article.group div.pregunta img#depo{
+        margin-left:33%;
+        }
+    main div section.preguntas form article.group div.pregunta img#hist{
+        margin-left:33%;
+    }
+}
+
+@media (max-width: 767px) {
+    main div section.preguntas form img{
+        margin-top:10px;
+        margin-left: 3%;
+        border-radius: 30px;
+    }
+    main div section.preguntas form article.group div.pregunta img#oscar{
+        margin-left:25%;
+    }
+    main div section.preguntas form article.group div.pregunta img#geo{
+        margin-left:25%;
+    }
+    main div section.preguntas form article.group div.pregunta img#music{
+        margin-left:25%;
+    }
+    main div section.preguntas form article.group div.pregunta img#depo{
+        margin-left:25%;
+        }
+    main div section.preguntas form article.group div.pregunta img#hist{
+        margin-left:25%;
+    }
+    /* FOOTER */
+
+    footer{
+        display:flex;
+        flex-direction: column;
+    }
+
+    footer section {
+        margin-bottom: 20px;
+        border-right: none;
+        border-bottom: solid white 1.5px;
+        padding-bottom: 15px;
+    }
+
+    footer section:first-child{
+        margin-top: 10px;
+    }
+
+    footer section:last-child{
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 575px){
+    main div section.preguntas form img{
+        margin-top:10px;
+        margin-left: 6%;
+        border-radius: 30px;
+    }
+    main div section.preguntas form article.group div.pregunta img#oscar{
+        margin-left:25%;
+    }
+    main div section.preguntas form article.group div.pregunta img#geo{
+        margin-left:23%;
+    }
+    main div section.preguntas form article.group div.pregunta img#music{
+        margin-left:22%;
+    }
+    main div section.preguntas form article.group div.pregunta img#depo{
+        margin-left:22%;
+        }
+    main div section.preguntas form article.group div.pregunta img#hist{
+        margin-left:23%;
+    }
+}
