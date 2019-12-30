@@ -74,8 +74,12 @@ main div section.categorias article.categoria {
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
+}
+
+main div section.categorias article.categoria#especial {
     height: 100%;
 }
+
 
 main div section.categorias article.categoria ul {
     list-style-type: none;
@@ -441,7 +445,6 @@ form article.categoria small{
     max-width: 40%;
 }
 
-
 /* RANKING PAG */
 
 main section.tabla {
@@ -562,5 +565,16 @@ main section.tabla table tbody td a {
     }
     main div section#nobroken{
         width: 86%;
+    }
+}
+
+/* SOPORTE EDGE */
+@supports (-ms-ime-align:auto) {
+    main div {
+        justify-content: center;
+    }
+
+    main section.tabla table thead{
+        background-color: #dacdac;
     }
 }

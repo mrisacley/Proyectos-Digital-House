@@ -26,7 +26,7 @@
                     <article class="titulo">
                         <h2>Categorías</h2>
                     </article>
-                    <article class="categoria">
+                    <article class="categoria" id="especial">
                         <ul>
                             <li><a href="Geo.php">Geografía</a></li>
                             <li><a href="music.php">Música</a></li>
