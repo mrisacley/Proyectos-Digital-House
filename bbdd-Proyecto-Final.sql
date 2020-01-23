@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	5.7.26-0ubuntu0.18.10.1
 
+CREATE DATABASE IF NOT EXISTS `proyecto_final` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `proyecto_final`;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
