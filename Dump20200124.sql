@@ -27,10 +27,10 @@ DROP TABLE IF EXISTS `categoria`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `categoria` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
+  `nombre` varchar(45) NOT NULL,
   UNIQUE KEY `nombre_UNIQUE` (`nombre`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `pregunta_user` (
   KEY `id pregunta_idx` (`pregunta_id`),
   CONSTRAINT `id pregunta` FOREIGN KEY (`pregunta_id`) REFERENCES `quiz` (`id`),
   CONSTRAINT `id usuario` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `quiz` (
   PRIMARY KEY (`id`),
   KEY `id categoria_idx` (`categoria_id`),
   CONSTRAINT `id categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `ranking` (
   PRIMARY KEY (`id`),
   KEY `ranking_ibfk_1` (`user_id`),
   CONSTRAINT `ranking_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `user` (
   `puntaje` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usuario_UNIQUE` (`usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

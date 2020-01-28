@@ -313,9 +313,13 @@ main section.modif{
   background-color: #dbc5ac;
   border-radius: 15px;
 }
-main section.modif button{
+main section.modif form input{
+  /*
   width: 40%;
   margin: 15px 0px;
+  */
+  margin-left: 10%;
+  margin-right: 50px;
   background-color: #dbc5ac;
   border-color: #8a4900;
   color: #8a4900;
@@ -323,18 +327,47 @@ main section.modif button{
 main section.modif h3{
   margin-top: 60px;
 }
-main section.modif textarea.modi{
-  margin-top: 15px;
+main.abm section.modif form label ul{
+text-align: left;
 }
-main section.modif div.roto{
-  background-color: #dbc5ac;
+main.abm section.modif form label input.check{
+  margin-right: 0;
+  margin-bottom: 25px;
 }
-main section.modif div.roto a{
-  margin-top: 10px;
-  background-color: #dbc5ac;
-  border-color: #8a4900;
-  color: #8a4900;
-  border-radius: 10px;
+/*AGREGAR*/
+
+main div.agreg{
+    padding :30px;
+    text-align: center;
+}
+main section.agreg {
+    background-color: #dacdac;
+    border-radius: 15px;
+    width: 40%;
+    padding:10px;
+}
+main section article.agreg{
+    background-color: #e4d6ae;
+    border-radius: 15px;
+    width: 95%;
+    margin: 10px;
+    padding-top: 20px;
+    align-items: right;
+    display: flex;
+    padding-bottom: 20px;
+}
+/* MODIFICAR */
+main section article.agreg form ul label{
+    padding-left: 40%;
+}
+main section article.agreg form input{
+    margin-left: 25%;
+}
+main section article.agreg form ul select{
+    margin-left:45% ;
+}
+main section article.agreg form input.b{
+    margin-left: 50%;
 }
 
 /* FOOTER */
@@ -527,7 +560,7 @@ main section.tabla table tbody td a {
 
         main form div.alLado{ /*Recordar*/
             flex-direction: row;
-        }   
+        }
 
     /* FOOTER */
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
     session_start();
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar Perfil</title>
+    <title>Administrar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -17,39 +17,20 @@
       <?php include_once "nav.php" ?>
         <main class="abm">
           <section class="modif">
-              <button type="button" name="button">Ver Sugerencias</button>
-              <select class="" name="">
-                <option selected="selected">--Categoría--</option>
-                <option value="cine">Cine</option>
-                <option value="geo">Geografía</option>
-                <option value="mus">Música</option>
-                <option value="dep">Deportes</option>
-              </select>
-              <div class="roto">
-                <a href="#add">Agregar</a>
-                <a href="#mod">Modificar</a>
-                <a href="#drop">Quitar</a>
-              </div>
-              <h3 id="add">Agregar</h3>
-              <textarea name="name" rows="8" cols="80"></textarea>
-              <button type="button" name="button">Agregar</button>
-              <h3 id="mod">Modificar</h3>
-              <select class="" name="">
-                <option value="" selected="selected">--pregunta--</option>
-                <option value="">pregunta 1</option>
-                <option value="">pregunta 2</option>
-                <option value="">pregunta 3</option>
-              </select>
-              <textarea class="modi" name="name" rows="8" cols="80"></textarea>
-              <button type="button" name="button">Modificar</button>
-              <h3 id="drop">Quitar</h3>
-              <select class="" name="">
-                <option value="" selected="selected">--pregunta--</option>
-                <option value="">pregunta 1</option>
-                <option value="">pregunta 2</option>
-                <option value="">pregunta 3</option>
-              </select>
-              <button type="button" name="button">Quitar</button>
+                <h3>Seleccione categoria a trabajar</h3>
+                  <form class="" action="agregar.php" method="get">
+                    <label for="categoria">
+                      <ul>
+                        <input class="check" type="radio" name="categoria" value="geografia">Geografía
+                        <input class="check" type="radio" name="categoria" value="musica">Música
+                        <input class="check" type="radio" name="categoria" value="cine">Cine
+                        <input class="check" type="radio" name="categoria" value="deportes">Deporte
+                        <input class="check" type="radio" name="categoria" value="historia">Historia
+                      </ul>
+                    </label>
+                    <input type="submit" value="Agregar">
+                    <input type="submit" value="Explorar" formaction="modificar.php">
+                  </form>
           </section>
         </main>
         <footer>
