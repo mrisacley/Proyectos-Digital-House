@@ -1,5 +1,9 @@
 <?php
     session_start();
+    require_once 'clases/conexion.php';
+    require_once 'clases/categorias.php';
+    $objCate = new Categoria;
+    $categorias = $objCate->verCategoria();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,12 +24,10 @@
                 <h3>Seleccione categoria a trabajar</h3>
                   <form class="" action="agregar.php" method="get">
                     <label for="categoria">
-                      <ul>
-                        <input class="check" type="radio" name="categoria" value="geografia">Geografía
-                        <input class="check" type="radio" name="categoria" value="musica">Música
-                        <input class="check" type="radio" name="categoria" value="cine">Cine
-                        <input class="check" type="radio" name="categoria" value="deportes">Deporte
-                        <input class="check" type="radio" name="categoria" value="historia">Historia
+                    <ul>
+                        <?php foreach ($categorias as $categoria){ ?>
+                          <input class="check" type="radio" name="categoria" value="<?= $categoria["nombre"]?>"> <?= $categoria["nombre"] ?>
+                        <?php } ?>
                       </ul>
                     </label>
                     <input type="submit" value="Agregar">

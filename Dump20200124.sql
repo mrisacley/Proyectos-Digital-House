@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `categoria` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   `nombre` varchar(45) NOT NULL,
   UNIQUE KEY `nombre_UNIQUE` (`nombre`)
@@ -50,8 +50,8 @@ DROP TABLE IF EXISTS `pregunta_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `pregunta_user` (
-  `user_id` int(11) NOT NULL,
-  `pregunta_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
+  `pregunta_id` int NOT NULL,
   KEY `id usuario_idx` (`user_id`),
   KEY `id pregunta_idx` (`pregunta_id`),
   CONSTRAINT `id pregunta` FOREIGN KEY (`pregunta_id`) REFERENCES `quiz` (`id`),
@@ -76,14 +76,14 @@ DROP TABLE IF EXISTS `quiz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `quiz` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `puntuacion` int(11) NOT NULL,
-  `pregunta` varchar(45) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `puntuacion` int NOT NULL,
+  `pregunta` varchar(100) NOT NULL,
   `opcion_correcta` varchar(45) NOT NULL,
   `opcion2` varchar(45) NOT NULL,
   `opcion3` varchar(45) NOT NULL,
   `opcion4` varchar(45) NOT NULL,
-  `categoria_id` int(11) NOT NULL,
+  `categoria_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id categoria_idx` (`categoria_id`),
   CONSTRAINT `id categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`)
@@ -107,9 +107,9 @@ DROP TABLE IF EXISTS `ranking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `ranking` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `posicion` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `posicion` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ranking_ibfk_1` (`user_id`),
   CONSTRAINT `ranking_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
@@ -133,14 +133,14 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `usuario` varchar(16) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(32) NOT NULL,
   `pais` varchar(45) DEFAULT NULL,
   `edad` int(11) DEFAULT NULL,
   `fecha_de_creacion` datetime NOT NULL,
-  `puntaje` int(11) NOT NULL,
+  `puntaje` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usuario_UNIQUE` (`usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

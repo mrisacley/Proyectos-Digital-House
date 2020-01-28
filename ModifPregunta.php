@@ -1,5 +1,10 @@
 <?php 
-    session_start();
+      session_start();
+      require_once 'clases/conexion.php';
+      require_once 'clases/categorias.php';
+      require_once "clases/pregunta.php";
+      $objPregunta = new Pregunta;
+      $todasPreguntas = $objPregunta->mostrarPreguntas();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,14 +30,17 @@
                             <label for="">Pregunta</label>
                             <select class="" name="">
                                 <option value="" selected="selected">--pregunta--</option>
-                                <option value="">pregunta 1</option>
-                                    <option value="">pregunta 2</option>
-                                    <option value="">pregunta 3</option>
+                                <?php foreach ($todasPreguntas as $preguntas) { ?>
+                                    <option value="<?= $preguntas["pregunta"]?>">
+                                        <?= $preguntas["pregunta"]?>
+                                    </option>
                             </select>
-                            <label for="">Opcion Correcta</label><input type="text">
+                            <label for="">Opcion Correcta</label>
+                            <input type="text">
                             <label for="">Opcion 1</label><input type="text">
                             <label for="">Opcion 2</label><input type="text">
                             <label for="">Opcion 3</label><input type="text">
+                            <?php } ?>
                             </ul>
                             <input class="b"value="Modificar"type="submit"><input class="b"value="Borrar"type="submit">
                         </form>

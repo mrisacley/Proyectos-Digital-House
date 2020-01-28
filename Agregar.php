@@ -1,8 +1,12 @@
 <?php
     session_start();
-    include_once ("clases/pregunta.php");
+    require_once 'clases/conexion.php';
+    require_once 'clases/categorias.php';
+    require_once "clases/pregunta.php";
     if($_POST){
-      pregunta::agregarPregunta();
+        $objPregunta = new Pregunta;
+        $newQuestion = $objPregunta->agregarPregunta();
+        header("location:modificar.php");
     }
 ?>
 <!DOCTYPE html>
@@ -26,7 +30,7 @@
                 <article class="agreg">
                         <form action=""method="POST">
                             <ul>
-                              <label for="">Valor</label><input type="text" name="puntuacion">
+                            <label for="">Valor</label><input type="text" name="puntuacion">
                             <label for="">Pregunta</label><input type="text" name="pregunta">
                             <label for="">Opcion Correcta</label><input type="text" name="opcion_correcta">
                             <label for="">Opcion 1</label><input type="text" name="opcion2">
