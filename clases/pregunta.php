@@ -10,6 +10,32 @@
         private $opcion4;
         private $categoria;
 
+        public function eliminarPregunta(){
+            $id = $_GET["id"];
+            $link = Conexion::conectar();
+            $sql = "DELETE FROM quiz WHERE id=$id;";
+            $stmt=$link->prepare($sql);
+            $stmt->execute();
+        }
+
+        public function modificarPregunta(){
+            $id = $_GET["id"];
+            $pregunta = $_POST["pregunta"];
+            $correcta = $_POST["opcion_correcta"];
+            $op2 = $_POST["opcion2"];
+            $op3 = $_POST["opcion3"];
+            $op4 = $_POST["opcion4"];
+            $link = Conexion::conectar();
+            $sql = "UPDATE quiz SET pregunta=:pregunta, opcion_correcta=:correcta,opcion2=:opcion2,opcion3=:opcion3,opcion4=:opcion4 WHERE id=$id";
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':pregunta',$pregunta,PDO::PARAM_STR);
+            $stmt->bindParam(':correcta',$correcta,PDO::PARAM_STR);
+            $stmt->bindParam(':opcion2',$op2,PDO::PARAM_STR);
+            $stmt->bindParam(':opcion3',$op3,PDO::PARAM_STR);
+            $stmt->bindParam(':opcion4',$op4,PDO::PARAM_STR);
+            $stmt->execute();
+        }
+
 
         public function mostrarPreguntas(){
             $link = Conexion::conectar();

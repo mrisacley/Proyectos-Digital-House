@@ -5,6 +5,18 @@
       require_once "clases/pregunta.php";
       $objPregunta = new Pregunta;
       $todasPreguntas = $objPregunta->mostrarPreguntas();
+      foreach ($todasPreguntas as $preguntas){
+          if($_GET["id"] == $preguntas["id"]){
+            $modificar = [];
+            $modificar = $preguntas;
+            break;
+          }
+    }
+        if($_POST){
+            $ModifPregunta=$objPregunta->modificarPregunta();
+            header('location:abm.php');
+        }
+      
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,22 +39,15 @@
                 <article class="agreg">
                         <form action=""method="POST">
                             <label for="">Pregunta</label>
-                            <select class="" name="">
-                                <option value="" selected="selected">--pregunta--</option>
-                                <?php foreach ($todasPreguntas as $preguntas) { ?>
-                                    <option value="<?= $preguntas["pregunta"]?>">
-                                        <?= $preguntas["pregunta"]?>
-                                    </option>
-                                <?php } ?>
-                            </select>
+                            <input type="text" name="pregunta" value="<?=$modificar["pregunta"]?>" class="ancho">
                             <label for="">Opcion Correcta</label>
-                            <input type="text" class="ancho">
+                            <input type="text" value="<?=$modificar["opcion_correcta"]?>" name="opcion_correcta" class="ancho">
                             <label for="">Opcion 1</label>
-                            <input type="text" class="ancho">
+                            <input type="text" value="<?=$modificar["opcion2"]?>" class="ancho" name="opcion2">
                             <label for="">Opcion 2</label>
-                            <input type="text" class="ancho">
+                            <input type="text" value="<?=$modificar["opcion3"]?>" class="ancho"name="opcion3">
                             <label for="">Opcion 3</label>
-                            <input type="text" class="ancho">
+                            <input type="text" value="<?=$modificar["opcion4"]?>" class="ancho" name="opcion4">
                             <div class="buttom">
                                 <input type="submit" value="Modificar" class="guardar">
                                 <input class="guardar"value="Regresar" onclick="history.back()" type="button">

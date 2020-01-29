@@ -22,7 +22,7 @@
         <main class="abm">
           <section class="modif">
                 <h3>Seleccione categoria a trabajar</h3>
-                <div><form class="abm" action="agregar.php" method="get">
+                <div><form class="abm" action="Agregar.php" method="get">
                   <div class="form-check">
                     <?php foreach ($categorias as $categoria){ ?>
                       <input class="form-check-input" type="radio" name="categoria" value="<?= $categoria["nombre"]?>">

@@ -10,7 +10,7 @@
             $link = new PDO(
                 'mysql:host=localhost;dbname=proyecto',
                 'root',
-                ''
+                'root'
             );
             $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             return $link;

@@ -4,8 +4,8 @@
 -- ------------------------------------------------------
 -- Server version	8.0.13
 
-CREATE DATABASE IF NOT EXISTS `Proyecto` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `Proyecto`;
+CREATE DATABASE IF NOT EXISTS `proyecto` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `proyecto`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,7 +36,13 @@ CREATE TABLE `categoria` (
 --
 -- Dumping data for table `categoria`
 --
-
+INSERT INTO `categoria` (`nombre`) VALUES
+	('musica'),
+    ('historia'),
+    ('geografia'),
+    ('deportes'),
+    ('cine');
+    
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;

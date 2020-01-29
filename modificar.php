@@ -23,38 +23,43 @@
   <body>
     <div class="container">
       <?php include_once "nav.php" ?>
-        <main class="abm">
+      <main class="abm">
         <div class="arreglo"><section class="tabla">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Pregunta</th>
-                    <th scope="col">Opcion Correcta</th>
-                    <th scope="col">Opcion 1</th>
-                    <th scope="col">Opcion 2</th>
-                    <th scope="col">Opcion 3</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <?php foreach ($todasPreguntas as $preguntas) { ?>
-                      <th scope="row"><?= $preguntas["id"];?></th>
-                      <td><?= $preguntas["pregunta"];?></td>
-                      <td><?= $preguntas["opcion_correcta"];?></td>
-                      <td><?= $preguntas["opcion2"];?></td>
-                      <td><?= $preguntas["opcion3"];?></td>
-                      <td><?= $preguntas["opcion4"];?></td>
-                    <?php } ?>
-                  <tr>
-                </tbody>
-              </table>
-              <div class="buttom">
-                <button class="guardar"><a href="ModifPregunta.php">Modificar Pregunta</a></button>
-                <input class="guardar"value="Regresar" onclick="history.back()" type="button">
-              </div>
-        </section></div>
-        </main>
+          <form action="" method="get">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Seleccionar</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Pregunta</th>
+                  <th scope="col">Opcion Correcta</th>
+                  <th scope="col">Opcion 1</th>
+                  <th scope="col">Opcion 2</th>
+                  <th scope="col">Opcion 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <?php foreach ($todasPreguntas as $preguntas) { ?>
+                    <td><input type="radio" name="id" value="<?=$preguntas["id"]?>"></td>
+                    <th scope="row"><?= $preguntas["id"];?></th>
+                    <td><?= $preguntas["pregunta"];?></td>
+                    <td><?= $preguntas["opcion_correcta"];?></td>
+                    <td><?= $preguntas["opcion2"];?></td>
+                    <td><?= $preguntas["opcion3"];?></td>
+                    <td><?= $preguntas["opcion4"];?></td>
+                  <?php } ?>
+                <tr>
+              </tbody>
+            </table>
+            <div class="buttom">
+              <input type="hidden" name="categoria" value="<?=htmlspecialchars($_GET["categoria"]);?>">
+              <input type="submit" value="Borrar" class="guardar" formaction="confirmar.php">
+              <input class="guardar" value="Modificar" type="submit" formaction="ModifPregunta.php">
+              <input class="guardar"value="Regresar" onclick="history.back()" type="button">                
+            </div>
+            </form></div>
+      </main>
         <footer>
             <section class="FAQ"><a href="FAQ.php">Preguntas Frecuentes</a></section>
             <section class="contacto"><a href="contact.php">Contáctanos</a></section>
