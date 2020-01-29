@@ -305,35 +305,33 @@ main section.subquest button{
 main.abm{
   padding: 40px;
 }
-main section.modif{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px 20%;
+main.abm section.modif{
   background-color: #dbc5ac;
   border-radius: 15px;
 }
-main section.modif form input{
-  /*
-  width: 40%;
-  margin: 15px 0px;
-  */
-  margin-left: 10%;
-  margin-right: 50px;
+
+main.abm section.modif h3 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+main section.modif div form.abm div.form-check label {
+    text-align: left;
+}
+
+main section.modif form div.buttom {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+main section.modif form div.buttom input.redirect{
   background-color: #dbc5ac;
   border-color: #8a4900;
   color: #8a4900;
 }
-main section.modif h3{
-  margin-top: 60px;
-}
-main.abm section.modif form label ul{
-text-align: left;
-}
-main.abm section.modif form label input.check{
-  margin-right: 0;
-  margin-bottom: 25px;
-}
+
 /*AGREGAR*/
 
 main div.agreg{
@@ -343,33 +341,40 @@ main div.agreg{
 main section.agreg {
     background-color: #dacdac;
     border-radius: 15px;
-    width: 40%;
+    width: 45%;
     padding:10px;
 }
 main section article.agreg{
     background-color: #e4d6ae;
     border-radius: 15px;
-    width: 95%;
     margin: 10px;
-    padding-top: 20px;
-    align-items: right;
-    display: flex;
+    padding-top: 10px;
+    align-items: center;
     padding-bottom: 20px;
 }
-/* MODIFICAR */
-main section article.agreg form ul label{
-    padding-left: 40%;
-}
-main section article.agreg form input{
-    margin-left: 25%;
-}
-main section article.agreg form ul select{
-    margin-left:45% ;
-}
-main section article.agreg form input.b{
-    margin-left: 50%;
+
+main section article.agreg div.asd form {
+    width: 100%;
 }
 
+main section article.agreg div.asd form input.ancho {
+    margin-left: 0;
+    width: 70%;
+}
+
+main section article.agreg form div.buttom {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+main section article.agreg form input.guardar {
+    background-color: #dbc5ac;
+    border-color: #8a4900;
+    color: #8a4900;
+    margin-left: 0;
+}
 /* FOOTER */
 
 footer {

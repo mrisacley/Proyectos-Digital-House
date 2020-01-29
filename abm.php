@@ -22,17 +22,20 @@
         <main class="abm">
           <section class="modif">
                 <h3>Seleccione categoria a trabajar</h3>
-                  <form class="" action="agregar.php" method="get">
-                    <label for="categoria">
-                    <ul>
-                        <?php foreach ($categorias as $categoria){ ?>
-                          <input class="check" type="radio" name="categoria" value="<?= $categoria["nombre"]?>"> <?= $categoria["nombre"] ?>
-                        <?php } ?>
-                      </ul>
-                    </label>
-                    <input type="submit" value="Agregar">
-                    <input type="submit" value="Explorar" formaction="modificar.php">
-                  </form>
+                <div><form class="abm" action="agregar.php" method="get">
+                  <div class="form-check">
+                    <?php foreach ($categorias as $categoria){ ?>
+                      <input class="form-check-input" type="radio" name="exampleRadios" value="<?= $categoria["nombre"]?>" checked>
+                      <label class="" for="exampleRadios1">
+                        <?= $categoria["nombre"] ?>
+                      </label>
+                    <?php } ?>
+                  </div>
+                  <div class="buttom">
+                    <input type="submit" value="Agregar" class="redirect">
+                    <input type="submit" value="Explorar" formaction="modificar.php" class="redirect">
+                  </div>
+                </form></div>
           </section>
         </main>
         <footer>

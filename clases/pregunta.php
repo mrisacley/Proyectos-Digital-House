@@ -26,7 +26,7 @@
             foreach ($categorias as $categoria => $valor){
                 if ($_GET["categoria"] == $valor["nombre"]){
                     return $valor["id"];
-                }       
+                }
             }       
         }
 

@@ -34,15 +34,15 @@
                                     <option value="<?= $preguntas["pregunta"]?>">
                                         <?= $preguntas["pregunta"]?>
                                     </option>
+                                <?php } ?>
                             </select>
                             <label for="">Opcion Correcta</label>
                             <input type="text">
                             <label for="">Opcion 1</label><input type="text">
                             <label for="">Opcion 2</label><input type="text">
                             <label for="">Opcion 3</label><input type="text">
-                            <?php } ?>
                             </ul>
-                            <input class="b"value="Modificar"type="submit"><input class="b"value="Borrar"type="submit">
+                            <input type="submit" value="Agregar">
                         </form>
                 </article>
             </section>
