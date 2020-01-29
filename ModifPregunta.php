@@ -26,7 +26,6 @@
             <h2>Modificar</h2>
                 <article class="agreg">
                         <form action=""method="POST">
-                            <ul>
                             <label for="">Pregunta</label>
                             <select class="" name="">
                                 <option value="" selected="selected">--pregunta--</option>
@@ -37,12 +36,17 @@
                                 <?php } ?>
                             </select>
                             <label for="">Opcion Correcta</label>
-                            <input type="text">
-                            <label for="">Opcion 1</label><input type="text">
-                            <label for="">Opcion 2</label><input type="text">
-                            <label for="">Opcion 3</label><input type="text">
-                            </ul>
-                            <input type="submit" value="Agregar">
+                            <input type="text" class="ancho">
+                            <label for="">Opcion 1</label>
+                            <input type="text" class="ancho">
+                            <label for="">Opcion 2</label>
+                            <input type="text" class="ancho">
+                            <label for="">Opcion 3</label>
+                            <input type="text" class="ancho">
+                            <div class="buttom">
+                                <input type="submit" value="Modificar" class="guardar">
+                                <input class="guardar"value="Regresar" onclick="history.back()" type="button">
+                            </div>
                         </form>
                 </article>
             </section>

@@ -6,7 +6,7 @@
     if($_POST){
         $objPregunta = new Pregunta;
         $newQuestion = $objPregunta->agregarPregunta();
-        header("location:modificar.php");
+        header("location:abm.php");
     }
 ?>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
         <main>
             <div class="agreg">
             <section class="agreg">
-            <h2>Agregar Pregunta</h2>
+                <h2>Agregar Pregunta</h2>
                 <article class="agreg">
                     <div class="asd">   
                         <form action=""method="POST">
@@ -38,7 +38,7 @@
                             <label for="">Opcion 3</label><input type="text" name="opcion4"class="ancho">
                             <div class="buttom">
                                 <input class="guardar"value="Guardar"type="submit">
-                                <input class="guardar"value="Regresar" formaction="abm.php"type="submit">
+                                <input class="guardar"value="Regresar" onclick="history.back()" type="button">
                             </div>
                         </form>
                     </div> 

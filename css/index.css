@@ -375,6 +375,30 @@ main section article.agreg form input.guardar {
     color: #8a4900;
     margin-left: 0;
 }
+
+/* MODIF PREGUNTA */
+main div.agreg section.agreg article.agreg form {
+    width: 100%;
+}
+
+main div.agreg section.agreg article.agreg form input.ancho {
+    margin-left: 0;
+    width: 70%;
+}
+main div.agreg section.agreg article.agreg form select {
+    margin-left: 0;
+    width: 70%;
+}
+
+/* MODIFICAR */
+
+main.abm div.arreglo section.tabla div.buttom input.guardar {
+    background-color: #dbc5ac;
+    border-color: #8a4900;
+    color: #8a4900;
+    margin-left: 0;
+}
+
 /* FOOTER */
 
 footer {

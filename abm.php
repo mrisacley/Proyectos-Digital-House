@@ -25,7 +25,7 @@
                 <div><form class="abm" action="agregar.php" method="get">
                   <div class="form-check">
                     <?php foreach ($categorias as $categoria){ ?>
-                      <input class="form-check-input" type="radio" name="exampleRadios" value="<?= $categoria["nombre"]?>" checked>
+                      <input class="form-check-input" type="radio" name="categoria" value="<?= $categoria["nombre"]?>">
                       <label class="" for="exampleRadios1">
                         <?= $categoria["nombre"] ?>
                       </label>
