@@ -25,7 +25,15 @@ class QuizController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregar');
+    }
+
+
+    public function message(){
+        return [
+            'puntuacion.required' => "Este campo es obligatorio",
+            'pregunta.string' => "Debe tener caracteres validos"
+        ];
     }
 
     /**
@@ -36,7 +44,36 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $quest = new Quiz;
+       
+        /* VALIDACION */
+        
+        $reglas = [
+            'puntuacion' => 'numeric|required',
+            'pregunta' => 'string|min:20',
+            'opcion_correcta' => 'string|min:1',
+            'opcion2' => 'string|min:1',
+            'opcion3' => 'string|min:1',
+            'opcion4' => 'string|min:1'
+        ];
+
+        $mensj = [
+            "string" => 'Rellene el campo :attribute',
+            "min" => 'Ingrese al menos :min caracter(es)'
+        ];
+
+        $validar = $this->validate($request,$reglas);
+
+        /* GUARDAR */
+        $quest->categoria_id = $_GET['categoria'];
+        $quest->puntuacion = $request->puntuacion;
+        $quest->pregunta = $request->pregunta;
+        $quest->opcion_correcta = $request->opcion_correcta;
+        $quest->opcion2 = $request->opcion2;
+        $quest->opcion3 = $request->opcion3;
+        $quest->opcion4 = $request->opcion4;
+        $quest->save();
+        return view('abm');
     }
 
     /**

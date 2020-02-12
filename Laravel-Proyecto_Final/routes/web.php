@@ -36,18 +36,18 @@ Route::get('/perfil',function(){
 });
 
 Route::get('/abm','CategoriaController@index');
+Route::post('/abm','CategoriaController@index');
 
 Route::get('/tablaPreguntas',function(){
     return view('verPreguntas');
 });
 
-Route::get('/agregarPregunta',function(){
-    return view('agregar');
-});
-
 Route::get('/modificarPreguntas',function(){
     return view('modificar');
 });
+
+Route::get('/agregarPregunta', 'QuizController@create');
+Route::post('/agregarPregunta','QuizController@store');
 
 Route::get('/aJugar',function(){
     return view('quest');
