@@ -1,12 +1,13 @@
 @extends('layouts.plantilla')
-@section('title',"Tabla de Preguntas")
+@section('title',"¿Desea Borrar?")
 @section('main')
     <div class="arreglo">
         <section class="tabla">
-            <form action="" method="get">
+            <form action="/confirmarBorrado" method="post">
+                @csrf
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr> 
                             <th scope="col">Seleccionar</th>
                             <th scope="col">ID</th>
                             <th scope="col">Pregunta</th>
@@ -17,7 +18,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($preguntas as $pregunta)
+                        @foreach ($preguntaBorrar as $pregunta)
                             <tr>
                                 <td><input type="radio" name="id" value="{{$pregunta->id}}"></td>
                                 <th scope="row">{{$pregunta->id}}</th>
@@ -31,12 +32,12 @@
                     </tbody>
                 </table>
                 <div class="buttom">
+                    <h5>¿Seguro desea eliminar?</h5>
                     <input type="hidden" name="categoria" value="">
-                    <input type="submit" value="Borrar" class="guardar" formaction="/confirmarBorrado">
-                    <input class="guardar" value="Modificar" type="submit" formaction="/modificarPreguntas">
-                    <input class="guardar" value="Regresar" onclick="history.back()" type="button">
+                    <input type="submit" value="Borrar" class="guardar">
+                    <input class="guardar"value="Regresar" onclick="history.back()" type="button">                
                 </div>
             </form>
-        </section>
+        </section> 
     </div>
 @endsection

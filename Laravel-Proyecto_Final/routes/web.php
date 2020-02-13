@@ -38,16 +38,16 @@ Route::get('/perfil',function(){
 Route::get('/abm','CategoriaController@index');
 Route::post('/abm','CategoriaController@index');
 
-Route::get('/tablaPreguntas',function(){
-    return view('verPreguntas');
-});
+Route::get('/tablaPreguntas','QuizController@index');
 
-Route::get('/modificarPreguntas',function(){
-    return view('modificar');
-});
+Route::get('/modificarPreguntas','QuizController@edit');
+Route::post('/modificarPreguntas','QuizController@update');
 
 Route::get('/agregarPregunta', 'QuizController@create');
 Route::post('/agregarPregunta','QuizController@store');
+
+Route::get('/confirmarBorrado','QuizController@show');
+Route::post('/confirmarBorrado','QuizController@destroy');
 
 Route::get('/aJugar',function(){
     return view('quest');
