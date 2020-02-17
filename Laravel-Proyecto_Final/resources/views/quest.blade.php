@@ -1,29 +1,31 @@
 @extends('layouts.plantilla')
 @section('title',"¡A responder!")
 @section('titulo')
-    <h1>Geografía</h1>
-    <img class="img"src="img/geo.png" alt="imagen sobre pregunta"> 
+    <h1>{{$categoria->nombre}}</h1>
+    <img class="img"src="\img\{{$categoria->imagen}}" alt="imagen sobre la categoria">
 @endsection
 @section('main')
     
     <div>
         <section class="preguntas">
-            <form action=".php" method="POST">
-                <article class="group">
-                    <div class="pregunta">
-                        <label for="oscarsfem">1. ¿Cuál es la capital de Eslovaquia?</label>
-                    </div>
-                    <div class="respuestas">
-                        <label for="Zagreb"><input type="radio" name="capEslov" id="Zagreb" value="Zagreb">Zagreb</label>
-                        <label for="Bucarest"><input type="radio" name="capEslov" id="Bucarest" value="Bucarest">Bucarest</label>
-                        <label for="Budapest"><input type="radio" name="capEslov" id="Budapest" value="Budapest">Budapest</label>
-                        <label for="Bratislava"><input type="radio" name="capEslov" id="Bratislava" value="Bratislava">Bratislava</label>
-                    </div>
-                </article>
-                <article class="boton">
-                    <button type="submit" class="btn btn-outline-dark">Enviar</button>
-                </article>
-            </form>
+                <form action=".php" method="POST">
+                    @foreach ($categoria->preguntas as $pregunta)
+                        <article class="group">
+                            <div class="pregunta">
+                                <label for="">{{$pregunta->pregunta}}</label>
+                            </div>
+                            <div class="respuestas">
+                                <label for=""><input type="radio" name="opcion_correcta" value="{{$pregunta->opcion_correcta}}">{{$pregunta->opcion_correcta}}</label>
+                                <label for=""><input type="radio" name="opcion2" value="{{$pregunta->opcion2}}">{{$pregunta->opcion2}}</label>
+                                <label for=""><input type="radio" name="opcion3" value="{{$pregunta->opcion3}}">{{$pregunta->opcion3}}</label>
+                                <label for=""><input type="radio" name="opcion4" value="{{$pregunta->opcion4}}">{{$pregunta->opcion4}}</label>
+                            </div>
+                        </article>
+                    @endforeach
+                    <article class="boton">
+                        <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                    </article>
+                </form>
         </section>  
     </div>
 

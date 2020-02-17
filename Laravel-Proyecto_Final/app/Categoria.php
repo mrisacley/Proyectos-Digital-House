@@ -8,4 +8,8 @@ class Categoria extends Model
 {
     public $table='categoria';
     public $timestamps = false;
+
+    public function preguntas(){
+        return $this->hasMany('App\Quiz','categoria_id');
+    }
 }

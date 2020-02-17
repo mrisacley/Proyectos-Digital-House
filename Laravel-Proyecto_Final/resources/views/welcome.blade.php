@@ -12,11 +12,9 @@
             </article>
             <article class="categoria" id="especial">
                 <ul>
-                    <li><a href="Geo.php">Geografía</a></li>
-                    <li><a href="music.php">Música</a></li>
-                    <li><a href="cine.php">Cine</a></li>
-                    <li><a href="depo.php">Deportes</a></li>
-                    <li><a href="history.html">Historia</a></li>
+                    @foreach ($categorias as $categoria)
+                        <li><a href="/aJugar/{{$categoria->id}}">{{$categoria->nombre}}</a></li>
+                    @endforeach
                 </ul>
             </article>
             <article class="boton">

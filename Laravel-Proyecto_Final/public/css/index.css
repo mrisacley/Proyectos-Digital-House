@@ -36,6 +36,7 @@ main div.tituloPrincipal {
 main div.tituloPrincipal h1 {
     text-align: center;
     margin-top: 20px;
+    text-transform: capitalize;
 }
 
 main div.tituloPrincipal p {
@@ -101,6 +102,7 @@ main div section.categorias article.categoria ul li a {
     display: block;
     text-align: center;
     font-size: 20px;
+    text-transform: capitalize;
 }
 
 main div section.categorias article.categoria ul li a:hover{

@@ -8,12 +8,25 @@ use Illuminate\Http\Request;
 class CategoriaController extends Controller
 {
 
+    /* MOSTRAR PREGUNTAS */
+
+    public function listarPreguntas($id){
+        $categoria = Categoria::find($id);
+        return view('quest',['categoria'=>$categoria]);
+    }
+
     /* LISTAR SUGERIR */
     public function listarSugerir(){
         $categorias=Categoria::all();
         return view('sugerir',['categorias'=>$categorias]);
     }
 
+    /* LISTAR INDEX */
+
+    public function listarIndex(){
+        $categorias=Categoria::all();
+        return view('welcome',['categorias'=>$categorias]);
+    }
 
     /**
      * Display a listing of the resource.

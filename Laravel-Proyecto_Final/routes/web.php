@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CategoriaController@listarIndex');
 
 Route::get('/contacto',function(){
     return view('contacto');
@@ -49,9 +47,7 @@ Route::post('/agregarPregunta','QuizController@store');
 Route::get('/confirmarBorrado','QuizController@show');
 Route::post('/confirmarBorrado','QuizController@destroy');
 
-Route::get('/aJugar',function(){
-    return view('quest');
-});
+Route::get('/aJugar/{id}','CategoriaController@listarPreguntas');
 
 Route::get('/FAQ',function(){
     return view('FAQ');
