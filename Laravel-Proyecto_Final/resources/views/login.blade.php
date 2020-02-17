@@ -7,14 +7,18 @@
                         <h2>Ingresar</h2>
                 </article>
                 <form action="" method="post"><!--Aca empieza el formulario-->
+                  @csrf
                     <article class="categoria">
-                            <small id="emailHelp" class="form-text font-weight-bold font-italic"></small>
                             <label for="user">Email Registrado</label>
-                            <input id="user" type="text" placeholder="Ingrese su email" name="email">
-                            <br><small id="emailHelp" class="form-text"></small>
+                            <input id="user" type="text" placeholder="Ingrese su usuario" name="usuario" value="{{ old('usuario') }}">
+                            @error('usuario')
+                                <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small>
+                            @enderror
                             <label for="pass">Contraseña</label>
-                            <input id="pass" type="password" placeholder="Ingrese su contraseña" name="pass">
-                            <br><small id="emailHelp" class="form-text"></small>
+                            <input id="pass" type="password" placeholder="Ingrese su contraseña" name="contraseña">
+                            @error('contraseña')
+                                <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small>
+                            @enderror
                             <div class="alLado">
                                 <input type="checkbox" name="recordar" id="recordar">
                                 <label for="recordar">Recordarme</label>
@@ -22,7 +26,7 @@
                             <label for=""><a href="regis.php">Crear una cuenta</a></label>
                     </article>
                     <article class="boton">
-                        <button type="submit" class="btn">Ingresar</button>
+                        <input type="submit" name="" value="Ingresar">
                     </article>
                 </form>
         </section>
