@@ -29,13 +29,24 @@ CREATE TABLE `categoria` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   `nombre` varchar(45) NOT NULL,
-  UNIQUE KEY `nombre_UNIQUE` (`nombre`)
+  UNIQUE KEY `nombre_UNIQUE` (`nombre`),
+  `imagen` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `categoria`
 --
+INSERT INTO `categoria` (`id`, `nombre`,`imagen`) VALUES
+(1, 'Cine','oscar.png'),
+(2, 'Deportes','depo.png'),
+(3, 'Geografia','geo.png'),
+(4, 'Historia','libro.png'),
+(5, 'Musica','music.png');
+
+-- --------------------------------------------------------
+​
+
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
@@ -136,7 +147,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(16) NOT NULL,
   `email` varchar(60) NOT NULL,
-  `password` varchar(32) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `pais` varchar(45) DEFAULT NULL,
   `edad` int(11) DEFAULT NULL,
   `fecha_de_creacion` datetime NOT NULL,

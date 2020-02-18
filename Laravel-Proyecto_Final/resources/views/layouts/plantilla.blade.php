@@ -32,7 +32,7 @@
                             <a class="nav-link" href="/perfil">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="logOut.php">Cerrar Sesión</a>
+                            <a class="nav-link" href="/login">Cerrar Sesión</a>
                         </li>
                     </ul>
                 </div>

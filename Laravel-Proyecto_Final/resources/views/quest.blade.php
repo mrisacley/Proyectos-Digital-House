@@ -5,10 +5,10 @@
     <img class="img"src="\img\{{$categoria->imagen}}" alt="imagen sobre la categoria">
 @endsection
 @section('main')
-    
     <div>
         <section class="preguntas">
-                <form action=".php" method="POST">
+                <form action="/ranking"><!--method="POST"-->
+                @csrf
                     @foreach ($categoria->preguntas as $pregunta)
                         <article class="group">
                             <div class="pregunta">
@@ -28,5 +28,4 @@
                 </form>
         </section>  
     </div>
-
 @endsection

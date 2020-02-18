@@ -9,7 +9,7 @@
                 <form action="" method="post"><!--Aca empieza el formulario-->
                   @csrf
                     <article class="categoria">
-                            <label for="user">Email Registrado</label>
+                            <label for="user">Usuario Registrado</label>
                             <input id="user" type="text" placeholder="Ingrese su usuario" name="usuario" value="{{ old('usuario') }}">
                             @error('usuario')
                                 <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small>
@@ -26,7 +26,7 @@
                             <label for=""><a href="regis.php">Crear una cuenta</a></label>
                     </article>
                     <article class="boton">
-                        <input type="submit" name="" value="Ingresar">
+                        <button type="submit" class="btn">Ingresar</button>
                     </article>
                 </form>
         </section>

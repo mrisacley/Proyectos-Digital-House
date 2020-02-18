@@ -4,12 +4,11 @@
     <div class="pref">
         <section class="profile">
             <article class="profpic">
-                <a href="/profedit"><img alt="imagen de perfil" src="{{asset('img\uppic.png')}}" width="210px" height="210px"></a>
+                <a href="/profedit"><img alt="imagen de perfil" src="{{asset('img\uppic.png')}}"  width="210px" height="210px"></a>
             </article>
             <article class="profinfo">
                 <a href="/profedit">Editar Perfil</a>
-                <p class="campos">Nick: </p>
-                <p class="campos">Puntuación: </p>
+                <p class="campos">Nick:</p>
                 <p class="campos">Nombre Público: </p>
                 <p class="campos"></p>
                 <p class="campos">País:</p>

@@ -34,10 +34,10 @@
                             <input type="checkbox" name="recordar" id="recordar">
                             <label for="recordar">Recordarme</label>
                         </div>
-                        <label for=""><a href="login.php">¿Ya tenes una cuenta?</a></label>
+                        <label for=""><a href="/login">¿Ya tenes una cuenta?</a></label>
                     </article>
                     <article class="boton">
-                        <input type="submit" value="Crear Cuenta">
+                        <button type="submit" class="btn">Crear Cuenta</button>
                     </article>
                 </form>
         </section>

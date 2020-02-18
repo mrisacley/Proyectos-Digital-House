@@ -140,4 +140,10 @@ class QuizController extends Controller
         $quiz->find($request->id)->delete();
         return redirect()->action('CategoriaController@index');
     }
+    public function rank()
+    {
+        return redirect ('ranking');
+    }
 }
+
+
