@@ -3,40 +3,48 @@
 @section('main')
     <div>
         <section class="categorias">
+                <article class="titulo">
+                        <h2>Ingresar</h2>
+                </article>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                <article class="categorias">
+                <article class="categoria">
                     <label for="email">{{ __('Direccion de Mail Registrada') }}</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     <label for="password">{{ __('Contraseña') }}</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     <div class="alLado">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <input  type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <label class="form-check-label" for="remember">
                             {{ __('Recordarme') }}
                         </label>
                     </div>
+                    <article class="boton">
+                            <button type="submit" class="btn">
+                                {{ __('Ingresar') }}
+                            </button>
+                        </article>
                 </article>
-                <article class="boton">
-                    <button type="submit" class="btn">
-                        {{ __('Login') }}
-                    </button>
-                    @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
-                    </article>
+                
+                
+                <article class="categorias">
+                        <label for=""><a href="regis.php">Crear una cuenta</a></label>
+                        @if (Route::has('password.request'))
+                        <label for="" style=margin-bottom:12px><a class="" href="{{ route('password.request') }}">
+                            {{ __('¿Olvidaste tu contraseña?') }}
+                        </a></label>
+                        @endif
+                </article>
             </form>
         </section>
     </div>

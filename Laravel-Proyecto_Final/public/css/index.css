@@ -110,7 +110,8 @@ main div section.categorias article.categoria ul li a:hover{
 }
 
 main div section.categorias article.boton{
-    margin: 5px auto;
+    margin: 10px auto 0;
+    padding-bottom: 12px; 
 }
 
 main div section.categorias article.boton a{
@@ -480,6 +481,10 @@ form label{ /*nombre de usuario, contraseña, confirmar contraseña*/
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+form label:first-child{
+    padding-top: 10px;
 }
 
 main form div.alLado{ /*Recordar*/
