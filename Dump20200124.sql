@@ -45,8 +45,6 @@ INSERT INTO `categoria` (`id`, `nombre`,`imagen`) VALUES
 (5, 'Musica','music.png');
 
 -- --------------------------------------------------------
-​
-
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
