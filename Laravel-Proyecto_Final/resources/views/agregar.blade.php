@@ -20,15 +20,15 @@
                             @error('opcion_correcta')
                                 <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small> 
                             @enderror
-                        <label for="">Opcion 1</label><input type="text" name="opcion2"class="ancho" value="{{ old('opcion2') }}">
+                        <label for="">Opcion 2</label><input type="text" name="opcion2"class="ancho" value="{{ old('opcion2') }}">
                             @error('opcion2')
                                 <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small> 
                             @enderror
-                        <label for="">Opcion 2</label><input type="text" name="opcion3"class="ancho"value="{{ old('opcion3') }}">
+                        <label for="">Opcion 3</label><input type="text" name="opcion3"class="ancho"value="{{ old('opcion3') }}">
                             @error('opcion3')
                                 <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small> 
                             @enderror
-                        <label for="">Opcion 3</label><input type="text" name="opcion4"class="ancho"value="{{ old('opcion4') }}">
+                        <label for="">Opcion 4</label><input type="text" name="opcion4"class="ancho"value="{{ old('opcion4') }}">
                             @error('opcion4')
                                 <small id="emailHelp" class="form-text font-weight-bold font-italic text-danger">{{$message}}</small> 
                             @enderror

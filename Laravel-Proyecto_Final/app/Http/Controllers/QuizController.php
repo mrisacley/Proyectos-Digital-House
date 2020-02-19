@@ -29,14 +29,6 @@ class QuizController extends Controller
         return view('agregar');
     }
 
-
-    public function message(){
-        return [
-            'puntuacion.required' => "Este campo es obligatorio",
-            'pregunta.string' => "Debe tener caracteres validos"
-        ];
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -58,7 +50,13 @@ class QuizController extends Controller
             'opcion4' => 'required|string|min:1'
         ];
 
-        $validar = $this->validate($request,$reglas);
+        $msjError = [
+            'required' => 'Por favor rellene el campo :attribute',
+            'min' => 'El campo :attribute requiere al menos :min caracteres',
+            'string' => 'Use caracteres válidos'
+        ];
+
+        $validar = $this->validate($request,$reglas,$msjError);
 
         /* GUARDAR */
         $quest->categoria_id = $_GET['categoria'];

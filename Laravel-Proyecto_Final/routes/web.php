@@ -60,3 +60,10 @@ Route::get('/sugerir','CategoriaController@listarSugerir');
 Route::get('/profedit',function(){
     return view ('profedit');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
