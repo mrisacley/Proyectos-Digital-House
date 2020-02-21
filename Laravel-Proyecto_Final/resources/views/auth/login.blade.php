@@ -35,8 +35,8 @@
                             </button>
                         </article>
                 </article>
-                
-                
+
+
                 <article class="categorias">
                         <label for=""><a href="regis.php">Crear una cuenta</a></label>
                         @if (Route::has('password.request'))

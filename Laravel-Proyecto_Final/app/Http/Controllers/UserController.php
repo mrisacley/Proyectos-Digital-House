@@ -5,6 +5,7 @@ use DB;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class UserController extends Controller
 {
@@ -41,6 +42,7 @@ class UserController extends Controller
       $user->password = Hash::make($req->contraseña);
       $user->fecha_de_creacion = date('d,m,y');
       $user->puntaje = 0;
+      $user->admin=1;
       $user->save();
     //  $session->user_id = $user->id;
     //  $session->save();
@@ -93,7 +95,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        $id= Auth::id();
+        $admin=User::find($id);
+        return view('perfil',['admin'=>$admin]);
     }
 
     /**

@@ -163,6 +163,36 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` TIMESTAMP ,
+  `password` varchar(255) NOT NULL,
+  `remember_token` varchar(255) ,
+  `updated_at` TIMESTAMP,
+  `puntaje` int(45) ,
+  `created_at` TIMESTAMP,
+  `admin` int(2) ,
+  `fecha_de_creacion` TIMESTAMP ,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `usuario_UNIQUE` (`usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

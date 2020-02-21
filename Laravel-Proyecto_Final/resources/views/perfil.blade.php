@@ -30,14 +30,17 @@
                     </li>
                 </ul>
                 <p class="campos">Tiempo Jugado: 00:00</p>
+                @if ($admin->admin!=2)
                 <img class="separador" src="img/linea.png" alt="" width="200px" height="10px">
                 <form action="/sugerir">
                     <button type="submit" name="button">Sugerir Pregunta</button>
                 </form>
+                @else
                 <img class="separador" src="img/linea.png" alt="" width="200px" height="10px">
                 <form class="" action="/abm" method="get">
-                    <button type="submit" name="button">Administrar</button>
+                  <button type="submit" name="button">Administrar</button>
                 </form>
+                @endif
                 </article>
             </section>
         <section class="perfeed">
@@ -45,13 +48,6 @@
                 <div>Ejemplo_Posicion_Actividad Reciente</div>
                 <div>Ejemplo_Posicion_Comunidad</div>
                 <div>Ejemplo_Posicion_Logros</div>
-                <!-- <ul>
-            <li>
-                Actividad reciente
-            </li>
-            <li>Comunidad</li>
-            <li>Logros</li>
-            </ul> -->
             </article>
         </section>
     </div>
