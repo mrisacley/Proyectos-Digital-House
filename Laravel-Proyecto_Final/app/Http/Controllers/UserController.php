@@ -36,16 +36,16 @@ class UserController extends Controller
 
       /* CREAR */
 
-      $user->usuario = $req->usuario;
+      $user->name = $req->usuario;
       $user->email = $req->email;
       $user->password = Hash::make($req->contraseña);
-      $user->fecha_de_creacion = date('d,m,y');
+      // $user->fecha_de_creacion = date('d,m,y');
       $user->puntaje = 0;
       $user->save();
     //  $session->user_id = $user->id;
     //  $session->save();
 
-    return view('profedit'/*,['user'=>$user]*/);
+    return view('login'/*,['user'=>$user]*/);
      #################/*END Crear*/###########################
    }
      #################/*Start Login*/###########################
@@ -91,9 +91,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($email,User $user)
     {
-        //
+      $user = User::where('email',$email)->get()->first();
+      return view('perfil',['usuario'=>$user]);
     }
 
     /**

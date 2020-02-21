@@ -10,8 +10,9 @@ class CategoriaController extends Controller
 
     /* MOSTRAR PREGUNTAS */
 
-    public function listarPreguntas($id){
-        $categoria = Categoria::find($id);
+    public function listarPreguntas($nombre){
+        $categoria = Categoria::select('nombre','imagen')->where('nombre',$nombre)->get()->first();
+        //$categoria = Categoria::find($id);
         return view('quest',['categoria'=>$categoria]);
     }
 

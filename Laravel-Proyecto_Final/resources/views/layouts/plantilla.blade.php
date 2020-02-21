@@ -30,12 +30,21 @@
                                 <a class="nav-link" href="/login">Login</a>
                             </li>
                         @else
-                            <li class="nav-item">
+                        <li class="nav-item">
                                 <a class="nav-link" href="/perfil">Perfil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/login">Cerrar Sesión</a>
-                            </li>
+                        </li>    
+                        <li class='nav-item'>
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Cerrar Sesion') }}
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>                   
+                        </li>
                         @endguest
                     </ul>
                 </div>

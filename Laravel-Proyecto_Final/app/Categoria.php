@@ -12,4 +12,8 @@ class Categoria extends Model
     public function preguntas(){
         return $this->hasMany('App\Quiz','categoria_id');
     }
+
+    public function getRouteKeyName(){
+        return 'nombre';
+    }
 }

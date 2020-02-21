@@ -13,7 +13,7 @@
             <article class="categoria" id="especial">
                 <ul>
                     @foreach ($categorias as $categoria)
-                        <li><a href="/aJugar/{{$categoria->id}}">{{$categoria->nombre}}</a></li>
+                        <li><a href="/aJugar/{{$categoria->nombre}}">{{$categoria->nombre}}</a></li>
                     @endforeach
                 </ul>
             </article>

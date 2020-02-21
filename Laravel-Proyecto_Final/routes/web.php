@@ -31,9 +31,7 @@ Route::get('/ranking',function(){
     return view('ranking');
 });
 
-Route::get('/perfil',function(){
-    return view('perfil');
-});
+Route::get('/perfil/{email}', 'UserController@show');
 
 Route::get('/abm','CategoriaController@index');
 Route::post('/abm','CategoriaController@index');
@@ -49,7 +47,7 @@ Route::post('/agregarPregunta','QuizController@store');
 Route::get('/confirmarBorrado','QuizController@show');
 Route::post('/confirmarBorrado','QuizController@destroy');
 
-Route::get('/aJugar/{id}','CategoriaController@listarPreguntas');
+Route::get('/aJugar/{nombre}','CategoriaController@listarPreguntas');
 
 Route::get('/FAQ',function(){
     return view('FAQ');
@@ -60,10 +58,6 @@ Route::get('/sugerir','CategoriaController@listarSugerir');
 Route::get('/profedit',function(){
     return view ('profedit');
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

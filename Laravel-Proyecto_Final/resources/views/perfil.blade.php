@@ -8,11 +8,10 @@
             </article>
             <article class="profinfo">
                 <a href="/profedit">Editar Perfil</a>
-                <p class="campos">Nick:</p>
-                <p class="campos">Nombre Público: </p>
+                <p class="campos">Nombre Público: {{$usuario->name}} </p>
                 <p class="campos"></p>
                 <p class="campos">País:</p>
-                <p class="campos">Usuario desde: 01/01/19</p>
+                <p class="campos">Usuario desde: {{$usuario->created_at}}</p>
              <p class="campos">Ranking actual: #0</p>
                 <p class="campos">Mejor Ranking: #0</p>
                 <ul>
