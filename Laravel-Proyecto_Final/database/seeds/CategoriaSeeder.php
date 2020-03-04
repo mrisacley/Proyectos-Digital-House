@@ -11,10 +11,20 @@ class CategoriaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categoria')->where('nombre','geografia')->update(['imagen'=>'geo.png']);
-        DB::table('categoria')->where('nombre','cine')->update(['imagen'=>'oscar.png']);
-        DB::table('categoria')->where('nombre','musica')->update(['imagen'=>'music.png']);
-        DB::table('categoria')->where('nombre','historia')->update(['imagen'=>'libro.png']);
-        DB::table('categoria')->where('nombre','deportes')->update(['imagen'=>'depo.png']);
+        DB::table('categoria')->insert([
+            'nombre'=>'geografia',
+            'imagen' => 'geo.png']);
+        DB::table('categoria')->insert([
+            'nombre'=>'cine',
+            'imagen'=>'oscar.png']);
+        DB::table('categoria')->insert([
+            'nombre'=>'musica',
+            'imagen'=>'music.png']);
+        DB::table('categoria')->insert([
+            'nombre'=>'historia',
+            'imagen'=>'libro.png']);
+        DB::table('categoria')->insert([
+            'nombre'=>'deportes',
+            'imagen'=>'depo.png']);
     }
 }

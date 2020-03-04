@@ -14,17 +14,17 @@
         @csrf
           <label for="nickPublico"> Tu Nick Público:</label>
           <input type="text" name="usuario" value="">
-          <label for="edad">Fecha de Nacimiento:</label>
-          <input type="date" name="date" value="">
-          <label for="pais">Pais:</label>
-          <select class="paises" name="pais" id="pais">
+          {{-- <label for="edad">Fecha de Nacimiento:</label>
+          <input type="date" name="date" value=""> --}}
+          {{-- <label for="pais">Pais:</label> --}}
+          {{-- <select class="paises" name="pais" id="pais">
             <option value="">--Seleccione--</option>
             <option value="Chile">Chile</option>
             <option value="Argentina">Argentina</option>
             <option value="Uruguay">Uruguay</option>
             <option value="Paraguay">Paraguay</option>
             <option value="Bolivia">Bolivia</option>
-          </select>
+          </select> --}}
           <br>
           <input type="submit" name="" value="Guardar cambios">
           <a href="/perfil">Volver</a>
