@@ -31,7 +31,7 @@
                             </li>
                         @else
                         <li class="nav-item">
-                                <a class="nav-link" href="/perfil">Perfil</a>
+                        <a class="nav-link" href="/perfil/{{Auth::user()->name}}">Perfil</a>
                         </li>    
                         <li class='nav-item'>
                             <a class="nav-link" href="{{ route('logout') }}"

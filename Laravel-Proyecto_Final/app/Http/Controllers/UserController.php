@@ -96,9 +96,9 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($email,User $user)
+    public function show($name,User $user)
     {
-      $user = User::where('email',$email)->get()->first();
+      $user = User::where('name',$name)->get()->first();
       return view('perfil',['usuario'=>$user]);
     }
 

@@ -4,7 +4,7 @@
     <div class="pref">
         <section class="profile">
             <article class="profpic">
-                <a href="/profedit"><img alt="imagen de perfil" src="{{asset('img\$usuario->avatar')}}"  width="210px" height="210px"></a>
+                <a href="/profedit"><img alt="imagen de perfil" src="/img/{{$usuario->avatar}}" width="210px" height="210px"></a>
             </article>
             <article class="profinfo">
                 <a href="/profedit">Editar Perfil</a>

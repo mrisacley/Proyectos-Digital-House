@@ -31,7 +31,7 @@ Route::get('/ranking',function(){
     return view('ranking');
 });
 
-Route::get('/perfil/{email}', 'UserController@show');
+Route::get('/perfil/{name}', 'UserController@show');
 
 Route::get('/abm','CategoriaController@index');
 Route::post('/abm','CategoriaController@index');
