@@ -5,9 +5,37 @@ use DB;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Auth;
+use App\Quiz;
 
 class UserController extends Controller
 {
+
+    /* RESPONDER PREGUNTAS */
+
+    public function responder(Request $req, Quiz $quiz)
+    {
+      $usuario = Auth::user();
+      dd($req->respuesta);
+      foreach ($quiz->all() as $pregunta){
+        if($req->respuesta == $pregunta->opcion_correcta){
+          $puntos = $usuario->correctas + 1;
+          $puntaje = $usuario->puntaje + $pregunta->puntuacion;
+          $usuario->update([
+            'correctas' => $puntos,
+            'puntaje' => $puntaje
+          ]);
+        } 
+        elseif($req->respuesta != $pregunta->opcion_correcta)
+        {
+          $resta = $usuario->incorrectas + 1;
+          $usuario->update([
+            'incorrectas' => $resta
+          ]);
+        }
+      }
+    }
+
     /**
      * Display a listing of the resource.
      *

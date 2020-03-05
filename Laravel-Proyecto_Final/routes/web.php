@@ -48,6 +48,7 @@ Route::get('/confirmarBorrado','QuizController@show');
 Route::post('/confirmarBorrado','QuizController@destroy');
 
 Route::get('/aJugar/{nombre}','CategoriaController@listarPreguntas');
+Route::post('/aJugar/{nombre}','UserController@responder');
 
 Route::get('/FAQ',function(){
     return view('FAQ');

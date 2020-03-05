@@ -9,5 +9,5 @@ use Illuminate\Auth\Authenticatable;
 class User extends Model implements AuthenticatableContract
 {
     use Authenticatable;
-    public $fillable=['name','email','password'];
+    public $fillable=['name','password','correctas','incorrectas','timeOut','avatar','puntaje'];
 }
