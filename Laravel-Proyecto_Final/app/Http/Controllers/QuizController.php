@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Quiz;
+use App\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class QuizController extends Controller
 {
@@ -26,7 +28,7 @@ class QuizController extends Controller
      */
     public function create()
     {
-        
+
         return view('agregar');
     }
 
@@ -39,9 +41,9 @@ class QuizController extends Controller
     public function store(Request $request)
     {
         $quest = new Quiz;
-       
+
         /* VALIDACION */
-        
+
         $reglas = [
             'puntuacion' => 'required|numeric',
             'pregunta' => 'required|string|min:20',
@@ -143,6 +145,19 @@ class QuizController extends Controller
     {
         return redirect ('ranking');
     }
+  /*  public function jugar($id){
+      $categoria = Categoria::select('nombre','imagen','id')->where('id',$id)->get()->first();
+      $preguntasCategoria = Quiz::where('categoria_id',$id);
+      $count = rand(0,$preguntasCategoria->count());
+      $random = $preguntasCategoria;
+      $pregunta = $random->pregunta;
+      //$collection = collect([1, 2, 3]);
+      $respuestas = collect([$random->opcion_correcta,$random->opcion2,$random->opcion3,$random->opcion4]);
+      //$respuestas->put($random->opcion_correcta);
+      //$respuestas->put($random->opcion2);
+      //$respuestas->put($random->opcion3);
+      //$respuestas->put($random->opcion4);
+      $respuestas->shuffle();
+      return view('quest',['categoria'=>$categoria,'pregunta'=>$pregunta, '$respuestas'=>$respuestas]);
+    }*/
 }
-
-

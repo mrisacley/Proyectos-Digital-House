@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Quiz;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -13,8 +14,15 @@ class CategoriaController extends Controller
     public function listarPreguntas($nombre){
         $categoria = Categoria::select('nombre','imagen','id')->where('nombre',$nombre)->get()->first();
         //$categoria = Categoria::find($id);
-        $quest = $categoria->preguntas->shuffle();
-        return view('quest',['categoria'=>$categoria,'quest'=>$quest]);
+        $quest = $categoria->preguntas;
+        foreach ($quest as $key){
+          $idPregunta = $key->id;
+          $pregunta = $key->pregunta;
+          $collection = collect([$key->opcion_correcta,$key->opcion2,$key->opcion3,$key->opcion4]);
+          $respuesta = $collection->shuffle();
+          return view('quest',['categoria'=>$categoria,'pregunta'=>$pregunta,'respuesta'=>$respuesta,'idPregunta'=>$idPregunta]);
+        }
+
     }
 
     /* LISTAR SUGERIR */

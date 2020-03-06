@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 @section('title',"¡A responder!")
-@section('titulo')  
+@section('titulo')
     <h1>{{$categoria->nombre}}</h1>
     <img class="img"src="\img\{{$categoria->imagen}}" alt="imagen sobre la categoria">
 @endsection
@@ -9,23 +9,24 @@
         <section class="preguntas">
                 <form action="" method="POST">
                     @csrf
-                    @foreach ($quest as $pregunta)
+
                         <article class="group">
                             <div class="pregunta">
-                                <label for="">{{$pregunta->pregunta}}</label>
+                                <label for="">{{$pregunta}}</label>
                             </div>
                             <div class="respuestas">
-                                <label for=""><input type="radio" name="{{$pregunta->id}}" value="{{$pregunta->opcion_correcta}}">{{$pregunta->opcion_correcta}}</label>
-                                <label for=""><input type="radio" name="{{$pregunta->id}}" value="{{$pregunta->opcion2}}">{{$pregunta->opcion2}}</label>
-                                <label for=""><input type="radio" name="{{$pregunta->id}}" value="{{$pregunta->opcion3}}">{{$pregunta->opcion3}}</label>
-                                <label for=""><input type="radio" name="{{$pregunta->id}}" value="{{$pregunta->opcion4}}">{{$pregunta->opcion4}}</label>
+                                <label for=""><input type="radio" name="respuesta" value="{{$respuesta[0]}}">{{$respuesta[0]}}</label>
+                                <label for=""><input type="radio" name="respuesta" value="{{$respuesta[1]}}">{{$respuesta[1]}}</label>
+                                <label for=""><input type="radio" name="respuesta" value="{{$respuesta[2]}}">{{$respuesta[2]}}</label>
+                                <label for=""><input type="radio" name="respuesta" value="{{$respuesta[3]}}">{{$respuesta[3]}}</label>
+                                <input type="hidden" name="id" value="{{$idPregunta}}">
                             </div>
                         </article>
-                    @endforeach
+
                     <article class="boton">
                         <button type="submit" class="btn btn-outline-dark">Enviar</button>
                     </article>
                 </form>
-        </section>  
+        </section>
     </div>
 @endsection

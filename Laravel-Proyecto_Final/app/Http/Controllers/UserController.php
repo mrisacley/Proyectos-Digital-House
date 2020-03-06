@@ -16,25 +16,25 @@ class UserController extends Controller
     public function responder(Request $req, Quiz $quiz)
     {
       $usuario = Auth::user();
-      dd($req->respuesta);
-      foreach ($quiz->all() as $pregunta){
-        if($req->respuesta == $pregunta->opcion_correcta){
-          $puntos = $usuario->correctas + 1;
-          $puntaje = $usuario->puntaje + $pregunta->puntuacion;
-          $usuario->update([
-            'correctas' => $puntos,
-            'puntaje' => $puntaje
-          ]);
-        } 
-        elseif($req->respuesta != $pregunta->opcion_correcta)
-        {
-          $resta = $usuario->incorrectas + 1;
-          $usuario->update([
-            'incorrectas' => $resta
-          ]);
-        }
+      //  foreach ($quiz->all() as $pregunta){
+      $pregunta = $quiz->where('id',$req->id)->first();
+      if($req->respuesta == $pregunta->opcion_correcta){
+        $puntos = $usuario->correctas += 1;
+        $puntaje = $usuario->puntaje += $pregunta->puntuacion;
+        $usuario->update([
+          'correctas' => $puntos,
+          'puntuacion' => $puntaje
+        ]);
       }
-    }
+      else{
+        $resta = $usuario->incorrectas += 1;
+        $usuario->update(['incorrectas' => $resta]);
+        }
+
+      }
+
+
+
 
     /**
      * Display a listing of the resource.

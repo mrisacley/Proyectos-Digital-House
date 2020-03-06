@@ -2,7 +2,7 @@
 @section('title',"Home")
 @section('titulo')
     <h1>BIENVENIDO!</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore deserunt, laborum nesciunt adipisci cupiditate alias eius nihil consectetur. Vel asperiores recusandae placeat, aliquid sunt quae quibusdam quo a perferendis alias?</p>    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore deserunt, laborum nesciunt adipisci cupiditate alias eius nihil consectetur. Vel asperiores recusandae placeat, aliquid sunt quae quibusdam quo a perferendis alias?</p>
 @endsection
 @section('main')
     <div id="nobroken">
@@ -39,5 +39,5 @@
                 <a class="btn btn-outline-dark" href="/ranking" role="button">Ver más</a>
             </article>
         </section>
-    </div>  
+    </div>
 @endsection
