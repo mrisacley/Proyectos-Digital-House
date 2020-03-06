@@ -11,14 +11,22 @@
                 <h2>Categorías</h2>
             </article>
             <article class="categoria" id="especial">
+            @guest
+            <ul>
+                 @foreach ($categorias as $categoria)
+                        <li><a href="/registrar">{{$categoria->nombre}}</a></li>
+                    @endforeach
+                    </ul>
+                @else
                 <ul>
                     @foreach ($categorias as $categoria)
                         <li><a href="/aJugar/{{$categoria->nombre}}">{{$categoria->nombre}}</a></li>
                     @endforeach
                 </ul>
+                @endguest
             </article>
             <article class="boton">
-                <a class="btn btn-outline-dark" href="#" role="button">Ver más</a>
+                <!--<a class="btn btn-outline-dark" href="#" role="button">Ver más</a>-->
             </article>
         </section>
         <section class="ranking">
@@ -28,11 +36,11 @@
             </article>
             <article class="posiciones">
                 <ol>
-                    <li><img src="{{asset('img\1puesto.png')}}" alt=""><a href="/perfil">Usuario 1</a></li>
-                    <li><img src="{{asset('img\2puesto.png')}}" alt=""><a href="/perfil">Usuario 2</a></li>
-                    <li><img src="{{asset('img\3puesto.png ')}}" alt=""><a href="/perfil">Usuario 3</a></li>
-                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="/perfil">Usuario 4</a></li>
-                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="/perfil">Usuario 5</a></li>
+                    <li><img src="{{asset('img\1puesto.png')}}" alt=""><a href="#">Usuario 1</a></li>
+                    <li><img src="{{asset('img\2puesto.png')}}" alt=""><a href="#">Usuario 2</a></li>
+                    <li><img src="{{asset('img\3puesto.png ')}}" alt=""><a href="#">Usuario 3</a></li>
+                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="#">Usuario 4</a></li>
+                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="#">Usuario 5</a></li>
                 </ol>
             </article>
             <article class="boton">

@@ -127,7 +127,9 @@ class UserController extends Controller
     public function show($name,User $user)
     {
       $user = User::where('name',$name)->get()->first();
-      return view('perfil',['usuario'=>$user]);
+      $id=Auth::id();
+      $admin=User::find($id);
+      return view('perfil',['usuario'=>$user],['admin'=>$admin]);
     }
 
     /**

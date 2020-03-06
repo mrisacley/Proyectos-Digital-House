@@ -29,14 +29,17 @@
                     </li>
                 </ul>
                 <p class="campos">Tiempo Jugado: 00:00</p>
+                @if($admin->rol == 'player')
                 <img class="separador" src="/img/linea.png" alt="" width="200px" height="10px">
                 <form action="/sugerir">
                     <button type="submit" name="button">Sugerir Pregunta</button>
                 </form>
+                @elseif ($admin->rol == 'admin')
                 <img class="separador" src="/img/linea.png" alt="" width="200px" height="10px">
                 <form class="" action="/abm" method="get">
                     <button type="submit" name="button">Administrar</button>
                 </form>
+                @endif
                 </article>
             </section>
         <section class="perfeed">
