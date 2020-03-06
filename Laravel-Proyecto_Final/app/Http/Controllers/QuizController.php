@@ -145,9 +145,12 @@ class QuizController extends Controller
     {
         return redirect ('ranking');
     }
-  /*  public function jugar($id){
+
+    /*public function jugar($id){
       $categoria = Categoria::select('nombre','imagen','id')->where('id',$id)->get()->first();
-      $preguntasCategoria = Quiz::where('categoria_id',$id);
+      $preguntasCategoria = Quiz::where('categoria_id',$id)->inRandomOrder()->get();
+      dd($preguntasCategoria);
+
       $count = rand(0,$preguntasCategoria->count());
       $random = $preguntasCategoria;
       $pregunta = $random->pregunta;
@@ -159,5 +162,6 @@ class QuizController extends Controller
       //$respuestas->put($random->opcion4);
       $respuestas->shuffle();
       return view('quest',['categoria'=>$categoria,'pregunta'=>$pregunta, '$respuestas'=>$respuestas]);
+  
     }*/
 }

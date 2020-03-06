@@ -12,48 +12,22 @@
                         <th scope="col">#</th>
                         <th scope="col">Usuario</th>
                         <th scope="col">Puntuación</th>
-                        <th scope="col">Mejor categoría</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td> <a href="profile.php"> Usuario 1 </a></td>
-                        <td>1000</td>
-                        <td>Historia</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><a href="profile.php">Usuario 2</a></td>
-                        <td>890</td>
-                        <td>Cine</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><a href="profile.php">Usuario 3</a></td>
-                        <td>780</td>
-                        <td>Música</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td><a href="profile.php">Usuario 4</a></td>
-                        <td>670</td>
-                        <td>Música</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><a href="profile.php">Usuario 5</a></td>
-                        <td>550</td>
-                        <td>Geografía</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><a href="profile.php">Usuario 6</a></td>
-                        <td>340</td>
-                        <td>Historia</td>
-                    </tr>
+                    @foreach ($usuarios as $usuario)
+                       <tr>
+                            <th scope="row" class="contador">{{$index++}}</th>
+                            <td> <a href="profile.php"> {{$usuario->name}} </a></td>
+                            <td>{{$usuario->puntaje}}</td>
+                            <td>Historia</td>
+                        </tr> 
+                    @endforeach
                 </tbody>
             </table>
+            {{ $usuarios->links() }}
         </section>
     </div>
+    <script src="resources/js/script.js"></script>
 @endsection

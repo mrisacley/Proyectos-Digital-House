@@ -11,6 +11,14 @@ use App\Quiz;
 class UserController extends Controller
 {
 
+  /* RANKING */
+
+  public function ranking(){
+    $usuarios = User::orderBy('puntaje','desc')->paginate(3);
+    $index = $usuarios->firstItem();
+    return view('ranking',['usuarios'=>$usuarios,'index'=>$index]);
+  }
+
     /* RESPONDER PREGUNTAS */
 
     public function responder(Request $req, Quiz $quiz)
@@ -69,7 +77,7 @@ class UserController extends Controller
       $user->password = Hash::make($req->contraseña);
       // $user->fecha_de_creacion = date('d,m,y');
       $user->puntaje = 0;
-      $user->rol = 'admin';
+      $user->rol = 'player';
       $user->correctas = 0;
       $user->incorrectas = 0;
       $user->timeOut = 0;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use App\Quiz;
+use App\User;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -14,7 +15,7 @@ class CategoriaController extends Controller
     public function listarPreguntas($nombre){
         $categoria = Categoria::select('nombre','imagen','id')->where('nombre',$nombre)->get()->first();
         //$categoria = Categoria::find($id);
-        $quest = $categoria->preguntas;
+        $quest = Quiz::where('categoria_id',$categoria->id)->inRandomOrder()->get();
         foreach ($quest as $key){
           $idPregunta = $key->id;
           $pregunta = $key->pregunta;
@@ -35,7 +36,14 @@ class CategoriaController extends Controller
 
     public function listarIndex(){
         $categorias=Categoria::all();
-        return view('welcome',['categorias'=>$categorias]);
+        $rank = User::orderBy('puntaje','desc')->take(5)->get();
+        $usuarios = collect([]);
+        foreach($rank as $user){
+            $usuarios->push($user->name);
+        }
+        
+        return view('welcome',['categorias'=>$categorias,'usuarios'=>$usuarios]);
+        
     }
 
     /**

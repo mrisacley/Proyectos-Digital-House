@@ -27,9 +27,7 @@ Route::get('/registrar',function(){
 });
 Route::post('/registrar','UserController@crear');
 
-Route::get('/ranking',function(){
-    return view('ranking');
-});
+Route::get('/ranking','UserController@ranking');
 
 Route::get('/perfil/{name}', 'UserController@show');
 

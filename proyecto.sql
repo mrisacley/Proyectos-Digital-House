@@ -31,7 +31,8 @@ CREATE TABLE `categoria` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +42,7 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (NULL,NULL,'geografia','geo.png'),(NULL,NULL,'cine','oscar.png'),(NULL,NULL,'musica','music.png'),(NULL,NULL,'historia','libro.png'),(NULL,NULL,'deportes','depo.png');
+INSERT INTO `categoria` VALUES (1,NULL,NULL,'geografia','geo.png'),(2,NULL,NULL,'cine','oscar.png'),(3,NULL,NULL,'musica','music.png'),(4,NULL,NULL,'historia','libro.png'),(5,NULL,NULL,'deportes','depo.png');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 

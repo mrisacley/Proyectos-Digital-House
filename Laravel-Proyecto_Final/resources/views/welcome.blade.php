@@ -36,11 +36,11 @@
             </article>
             <article class="posiciones">
                 <ol>
-                    <li><img src="{{asset('img\1puesto.png')}}" alt=""><a href="#">Usuario 1</a></li>
-                    <li><img src="{{asset('img\2puesto.png')}}" alt=""><a href="#">Usuario 2</a></li>
-                    <li><img src="{{asset('img\3puesto.png ')}}" alt=""><a href="#">Usuario 3</a></li>
-                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="#">Usuario 4</a></li>
-                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="#">Usuario 5</a></li>
+                    <li><img src="{{asset('img\1puesto.png')}}" alt=""><a href="#">{{$usuarios[0]}}</a></li>
+                    <li><img src="{{asset('img\2puesto.png')}}" alt=""><a href="#">{{$usuarios[1]}}</a></li>
+                    <li><img src="{{asset('img\3puesto.png ')}}" alt=""><a href="#">{{$usuarios[2]}}</a></li>
+                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="#">{{$usuarios[3]}}</a></li>
+                    <li><img src="{{asset('img\laurel.png')}}" alt=""><a href="#">{{$usuarios[4]}}</a></li>
                 </ol>
             </article>
             <article class="boton">
